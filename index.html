@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Saumya Yadav | Research</title>
+
+  <style>
+    /* ---------- THEME TOKENS ---------- */
+    :root {
+      --bg: #020617;
+      --bg-card: #022c22;
+      --accent: #4169E1;                         /* Royal blue accent */
+      --accent-soft: rgba(65, 105, 225, 0.15);
+      --text-main: #111111;                      /* Main text (almost black) */
+      --text-muted: #444444;                     /* Secondary text */
+      --border-subtle: rgba(148, 163, 184, 0.35);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+        "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #fff8ec, #fdf2df 70%, #fae9cd);
+      color: var(--text-main);
+      min-height: 100vh;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* ---------- PAGE LAYOUT ---------- */
+    .shell {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 18px 18px 40px;
+    }
+
+    /* ---------- NAVBAR ---------- */
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 4px 12px;
+      border-bottom: 1px solid rgba(148, 163, 184, 0.25);
+      backdrop-filter: blur(12px);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: linear-gradient(to bottom, transparent);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .brand-mark {
+      width: 26px;
+      height: 26px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      background: radial-gradient(circle at 0 0, #22c55e 0, #065f46 40%, #020617);
+    }
+
+    .brand-name {
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      font-size: 0.98rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      font-size: 0.9rem;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      position: relative;
+      padding-bottom: 4px;
+    }
+
+    .nav-links a:hover {
+      color: var(--text-main);
+      border-bottom: 2px solid var(--accent);
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background: var(--accent);
+      transition: width 0.18s ease-out;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    /* ---------- HERO LAYOUT (LEFT + RIGHT) ---------- */
+    .hero {
+      margin-top: 40px;
+      padding: 20px 0;
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 2fr);
+      gap: 40px;
+      align-items: center;
+      background: none;   /* No card; full-width layout */
+      border: none;
+      box-shadow: none;
+      border-radius: 0;
+    }
+
+    /* ---------- LEFT COLUMN: PHOTO, NAME, CV BUTTON ---------- */
+    .hero-left {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 10px;
+    }
+
+    .avatar-wrapper {
+      position: relative;
+      width: min(260px, 60vw);  /* responsive circle */
+      aspect-ratio: 1 / 1;
+      border-radius: 500%;
+      padding: 0;
+      background: none;
+      overflow: hidden;        /* enforces circle crop */
+    }
+
+    .avatar {
+      width: 100%;
+      height: 100%;
+      border-radius: 0;
+      object-fit: cover;
+      display: block;
+    }
+
+    .hero-name {
+      font-size: 2rem;
+      font-weight: 450;
+    }
+
+    .hero-role {
+      font-size: 0.9rem;
+      color: #111111;
+    }
+
+    .lab-link {
+      color: var(--accent);
+      font-weight: 500;
+      text-decoration: none;
+    }
+
+    .lab-link:hover {
+      text-decoration: underline;
+    }
+
+    /* CV button row under name */
+    .btn-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      margin-bottom: 26px;
+      margin-top: 10px;
+    }
+
+    .btn {
+      border-radius: 999px;
+      padding: 7px 14px;
+      font-size: 0.86rem;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(15, 23, 42, 0.85);
+      color: #e5e7eb;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      border-color: var(--accent);
+      background: linear-gradient(135deg, #4169E1, #6A8DFF);
+      color: white;
+      font-weight: 600;
+    }
+
+    .btn span.icon {
+      font-size: 0.9rem;
+    }
+
+    /* ---------- RIGHT COLUMN: ABOUT + SOCIAL ---------- */
+    .hero-right {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;   /* vertically centre right column */
+      padding-right: 4px;
+    }
+
+    .section-label {
+      font-size: 1.38rem;
+      text-transform: uppercase;
+      letter-spacing: 0.36em;
+      color: #222222;
+      margin-bottom: 16px;
+    }
+
+    .section-label-connect {
+      margin-top: 30px;   /* spacing between About text and Let's Connect */
+    }
+
+    .about-text {
+      font-size: 1rem;
+      color: #222222;
+      margin-bottom: 32px;
+    }
+
+    /* ---------- SOCIAL ICON ROW ---------- */
+    .social-row-left {
+      margin-top: 16px;
+      display: flex;
+      gap: 10px;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+    }
+
+    .social-chip-left {
+      width: 34px;
+      height: 34px;
+      border-radius: 999px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      /* neutral base; each network gets its own background */
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      font-size: 0.9rem;
+      color: #ffffff;
+      transition: 0.2s ease;
+    }
+
+    /* all icons in royal blue to match site accent */
+    .social-email,
+    .social-linkedin,
+    .social-scholar,
+    .social-twitter,
+    .social-insta,
+    .social-orcid,
+    .social-github,
+    .social-email2 {
+      background: var(--accent);
+    }
+
+    .social-chip-left:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.15);   /* brighten but keep same colour */
+    }
+
+    /* ---------- FOOTER ---------- */
+    footer {
+      margin-top: 26px;
+      text-align: center;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    /* ---------- RESPONSIVE ---------- */
+    @media (max-width: 720px) {
+      .hero {
+        grid-template-columns: 1fr;
+        text-align: left;
+      }
+      .hero-left {
+        text-align: center;
+      }
+      .nav-links {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <!-- NAVBAR -->
+    <header class="nav">
+      <div class="brand">
+        <!-- You can put "SY" + name here later if you like -->
+      </div>
+      <nav class="nav-links">
+        <a href="paper.html"> Publications</a>
+        <a href="cv.pdf" target="_blank">CV</a>
+        <a href="news.html">News</a>
+      </nav>
+    </header>
+
+    <!-- HERO: LEFT (photo + name) | RIGHT (about + links) -->
+    <main class="hero">
+      <!-- LEFT COLUMN -->
+      <div class="hero-left">
+        <div class="avatar-wrapper">
+          <!-- Replace "profile.jpg" with your actual image file -->
+          <img src="1.png" alt="Profile photo of Saumya Yadav" class="avatar" />
+          <!-- If no photo yet, you could instead use:
+          <div class="avatar">SY</div>
+          -->
+        </div>
+
+        <div>
+          <div class="hero-name">Saumya Yadav</div>
+          <div class="hero-role">
+            PhD Scholar<br />
+            <a class="lab-link" href="https://hmi.iiitd.edu.in/" target="_blank">
+              Human–Machine Interaction Lab
+            </a><br />
+            <a class="lab-link" href="https://www.iiitd.ac.in/" target="_blank">
+              IIIT-Delhi, India
+            </a>
+          </div>
+        </div>
+
+        <!-- Download CV button -->
+        <div class="btn-row">
+          <a class="btn btn-primary" href="CV.pdf" target="_blank">
+            <span class="icon">⬇</span> Download CV
+          </a>
+        </div>
+      </div>
+
+      <!-- RIGHT COLUMN -->
+      <div class="hero-right">
+        <!-- ABOUT -->
+        <div class="section-label">About Me</div>
+        <p class="about-text">
+          I work at the intersection of Human–Computer Interaction, AI, and digital learning, with a focus on understanding how attention changes moment-to-moment during online learning. My research combines gaze behaviour, pupil dynamics, heart-rate variability, and everyday behavioural signals to model how learners engage, get distracted, and recover attention—especially in the context of ADHD.
+<br>
+<br>
+My broader goal is to build computational markers of attention that power the next generation of adaptive, learner-aware systems. I’m interested in creating technology that can sense cognitive states in real time and respond intelligently to support personalised, inclusive learning experiences.
+<br>
+<br>
+I enjoy creating technologies that understand when learners struggle, when they focus, and when they need support systems that respond with the same sensitivity a good teacher would.
+        </p>
+
+        <!-- LET'S CONNECT -->
+        <div class="section-label section-label-connect">Let's Connect!</div>
+        <div class="social-row-left">
+          <a class="social-chip-left social-email" href="mailto:saumya@iiitd.ac.in">✉️</a>
+          <a class="social-chip-left social-linkedin" href="https://www.linkedin.com/in/saumya-yadav-152021" target="_blank">in</a>
+          <a class="social-chip-left social-scholar" href="https://scholar.google.com/citations?user=UlKVcXEAAAAJ" target="_blank">🎓</a>
+          <a class="social-chip-left social-twitter" href="https://x.com/saumyaydv15" target="_blank">𝕏</a>
+          <a class="social-chip-left social-insta" href="https://www.instagram.com/sau.says/" target="_blank">📸</a>
+          <a class="social-chip-left social-orcid" href="https://orcid.org/0000-0003-3747-961X" target="_blank">⭕</a>
+          <a class="social-chip-left social-github" href="https://github.com/Saumyadav" target="_blank"></a>
+          <a class="social-chip-left social-email2" href="mailto:saumyay@gmail.com">📧</a>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      © <span id="year"></span> Saumya Yadav
+    </footer>
+  </div>
+
+  <script>
+    // Auto-update footer year
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

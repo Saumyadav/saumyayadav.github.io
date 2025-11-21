@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>News | Saumya Yadav</title>
+
+  <style>
+    /* ---------- THEME (match index.html) ---------- */
+    :root {
+      --accent: #4169E1;            /* royal blue */
+      --text-main: #111111;
+      --text-muted: #555555;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+        "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #fff8ec, #fdf2df 70%, #fae9cd);
+      color: var(--text-main);
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .shell {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 32px 20px 40px;
+    }
+
+    /* ---------- NAV ---------- */
+    nav {
+      margin-bottom: 28px;
+      display: flex;
+      gap: 20px;
+      font-size: 0.95rem;
+    }
+
+    nav a {
+      color: var(--accent);
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* ---------- PAGE TITLE ---------- */
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 8px;
+      letter-spacing: 0.02em;
+    }
+
+    .subtitle {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      margin-bottom: 28px;
+    }
+
+    /* ---------- YEAR HEADERS ---------- */
+    .news-year {
+      margin-top: 32px;
+      margin-bottom: 8px;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #222;
+      border-left: 4px solid var(--accent);
+      padding-left: 10px;
+    }
+
+    /* ---------- NEWS LIST ---------- */
+    .news-list {
+      list-style: none;
+      margin: 0;
+      padding: 0 0 0 12px;
+      border-left: 2px solid #dddddd;
+    }
+
+    .news-item {
+      position: relative;
+      margin-bottom: 18px;
+      padding-left: 16px;
+    }
+
+    .news-item::before {
+      content: "";
+      position: absolute;
+      left: -6px;
+      top: 6px;
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: var(--accent);
+    }
+
+    .news-date {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      margin-bottom: 2px;
+    }
+
+    .news-text {
+      font-size: 0.97rem;
+      line-height: 1.45;
+    }
+
+    .news-text a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .news-text a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      margin-top: 40px;
+      text-align: center;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="shell">
+    <!-- NAV (same structure as other pages) -->
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="papers.html">Papers</a>
+      <a href="cv.pdf" target="_blank">CV</a>
+      <a href="news.html">News</a>
+    </nav>
+
+    <!-- PAGE HEADER -->
+    <h1>News</h1>
+    <div class="subtitle">
+      Selected updates about my research, collaborations, and academic journey.
+    </div>
+
+    <!-- ===== 2025 ===== -->
+    <div class="news-year">2025</div>
+    <ul class="news-list">
+
+      <li class="news-item">
+        <div class="news-date">September 2025</div>
+        <div class="news-text">
+          Our paper “EngageME: Real-Time Spatiotemporal Attention Inference in Digital Learning Environments” was accepted for presentation at the International Conference on Technology for Education (T4E 2025), to be held at IIT Madras, India.
+        </div>
+      </li>
+
+      <li class="news-item">
+        <div class="news-date">April 2025</div>
+        <div class="news-text">
+          Presented our full paper <em>Decoding Attention in Children with Attention Deficit Hyperactivity Disorder through Multimodal Analysis for Digital Learning</em> at the CHI Conference on Human Factors in Computing Systems (CHI 2025) Conference in Yokohama, Japan.
+        </div>
+      </li>
+
+      <li class="news-item">
+        <div class="news-date">January 2025</div>
+        <div class="news-text">
+          Presented our full paper <em>Towards Inclusive Education: Multimodal Classification of Textbook Images for Accessibility</em> at the Multimedia Modelling (MMM) Conference in Nara, Japan, sharing insights from our work with the global AI-in-education research community.
+
+        </div>
+      </li>
+
+    </ul>
+
+
+<!-- ===== 2024 ===== -->
+    <div class="news-year">2024</div>
+    <ul class="news-list">
+
+<li class="news-item">
+        <div class="news-date">December 2024</div>
+        <div class="news-text">
+         Selected to present my doctoral consortium paper <em>Decoding Attention in Children with Attention Deficit Hyperactivity Disorder through Multimodal Analysis for Digital Learning</em> in the Extended Abstracts of the CHI Conference on Human Factors in Computing Systems (CHI 2025), published by ACM.
+        </div>
+      </li>
+
+<li class="news-item">
+        <div class="news-date">October 2024</div>
+        <div class="news-text">
+          Happy to share that our paper <em>Towards Inclusive Education: Multimodal Classification of Textbook Images for Accessibility</em> is accepted for presentation at the Multimedia Modelling (MMM) 2025 Conference in Nara, Japan.
+        </div>
+      </li>
+
+<li class="news-item">
+        <div class="news-date">July 2024</div>
+        <div class="news-text">
+          Presented our full paper <em>EngageME: Exploring Neuropsychological Tests for Assessing Attention in Online Learning</em> at the AIED 2024 Conference in Recife, Brazil, sharing insights from our work with the global AI-in-education research community.
+        </div>
+      </li>
+
+<li class="news-item">
+        <div class="news-date">May 2025</div>
+        <div class="news-text">
+          Delighted to share that my work <em>Towards Inclusive Pedagogy: A Multimodal Classification of Textbook Illustrations for Adapted Learning Environments</em> was presented as a poster at JEP-TALN-RECITAL 2024 in Toulouse, France.
+        </div>
+      </li>
+
+<li class="news-item">
+        <div class="news-date">April 2024</div>
+        <div class="news-text">
+          Received a travel and conference grant from the International AIED Society and the AIED 2024 Local Organising Committee to attend the conference in Recife, Brazil, where I presented our work <em>EngageME: Exploring Neuropsychological Tests for Assessing Attention in Online Learning.</em>
+        </div>
+      </li>
+
+<li class="news-item">
+        <div class="news-date">March 2024</div>
+        <div class="news-text">
+          Excited to share our paper <em>EngageME: Exploring Neuropsychological Tests for Assessing Attention in Online Learning</em> was accepted at the International Conference on Artificial Intelligence in Education (AIED 2024).
+        </div>
+      </li>
+
+    </ul>
+
+
+    <!-- ===== 2023 ===== -->
+    <div class="news-year">2023</div>
+    <ul class="news-list">
+
+<li class="news-item">
+        <div class="news-date">September 2023</div>
+        <div class="news-text">
+          Our paper <em>AttentioNet: Monitoring Student Attention Type in Learning with an EEG-Based Measurement System</em> was accepted for publication at the 11th International Conference on Affective Computing and Intelligent Interaction (ACII 2023) at MIT Media Lab in Cambridge Massachusetts, USA.
+        </div>
+      </li>
+
+<li class="news-item">
+        <div class="news-date">July 2023</div>
+        <div class="news-text">
+          Excited to share that I got selected for a research internship at the <em>National Institute of Informatics (NII)</em>, Tokyo, Japan, where I worked with Prof. Shin'ichi Satoh at the Content-Based image and Text Analysis.
+        </div>
+      </li>
+
+<li class="news-item">
+        <div class="news-date">July 2023</div>
+        <div class="news-text">
+          Presented my work <em>EngageMe: Assessing Student Engagement in Online Learning Environments Using Neuropsychological Tests</em> at the AIED 2023 conference in Tokyo, Japan.
+        </div>
+      </li>
+
+<li class="news-item">
+        <div class="news-date">April 2023</div>
+        <div class="news-text">
+          Received a travel and conference grant from the International AIED Society and the AIED 2023 Local Organising Committee to attend the AIED 2023 conference in Tokyo, Japan, where I presented my work <em>EngageMe: Assessing Student Engagement in Online Learning Environments Using Neuropsychological Tests.</em>
+        </div>
+      </li>
+
+<li class="news-item">
+        <div class="news-date">April 2023</div>
+        <div class="news-text">
+          Selected for the Doctoral Consortium at AIED 2023, where I presented my work <em>EngageMe: Assessing Student Engagement in Online Learning Environments Using Neuropsychological Tests</em> and exchanged ideas with fellow PhD researchers in the field in Tokyo, Japan.
+        </div>
+      </li>
+
+    </ul>
+
+    <!-- ===== 2022 ===== -->
+    <div class="news-year">2022</div>
+    <ul class="news-list">
+
+      <li class="news-item">
+        <div class="news-date">January 2022</div>
+        <div class="news-text">
+          Began my PhD in the Human–Machine Interaction Lab at IIIT-Delhi, under the supervision of Dr. Jainendra Shukla, focusing on multimodal attention and adaptive digital learning.
+        </div>
+      </li>
+
+    </ul>
+
+    <!-- FOOTER -->
+    <footer>
+      © <span id="year"></span> Saumya Yadav
+    </footer>
+  </div>
+
+  <script>
+    // Auto-update footer year
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
